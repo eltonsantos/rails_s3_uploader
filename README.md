@@ -1,31 +1,74 @@
 # RailsS3Uploader
 
-TODO: Delete this and the text below, and describe your gem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails_s3_uploader`. To experiment with that code, run `bin/console` for an interactive prompt.
+**RailsS3Uploader** é uma gem em desenvolvimento para facilitar o upload de arquivos para o Amazon S3 usando Active Storage em aplicações Rails.
 
-## Installation
+---
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+## Instalação
 
-Install the gem and add to the application's Gemfile by executing:
+**Nota:** Esta gem está atualmente em desenvolvimento e ainda não foi lançada no RubyGems.org.
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+Para usar a versão de desenvolvimento, adicione esta linha ao seu Gemfile:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+```ruby
+gem 'rails_s3_uploader', git: 'https://github.com/RaquelFonsec/rails_s3_uploader.git'
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 
-## Usage
+E execute: bundle install
 
-TODO: Write usage instructions here
 
-## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Uso
+Nota: A documentação completa de uso será fornecida em futuras versões.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Configuração Inicial
+Variáveis de Ambiente
 
-## Contributing
+Crie um arquivo .env na raiz do seu projeto Rails e adicione suas credenciais da AWS:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails_s3_uploader.
+AWS_ACCESS_KEY_ID=seu_access_key_id
+AWS_SECRET_ACCESS_KEY=seu_secret_access_key
+AWS_REGION=sua_regiao
+AWS_BUCKET=nome_do_seu_bucket
+
+Inicializador
+
+Crie um inicializador em config/initializers/rails_s3_uploader.rb
+
+
+RailsS3Uploader.configure do |config|
+  config.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  config.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  config.region = ENV['AWS_REGION']
+  config.bucket = ENV['AWS_BUCKET']
+end
+
+
+Desenvolvimento
+Para configurar o ambiente de desenvolvimento, clone o repositório e instale as dependências:
+
+
+ git clone https://github.com/RaquelFonsec/rails_s3_uploader.git
+
+ cd rails_s3_uploader
+
+ bin/setup
+
+Você pode usar bin/console para um prompt interativo que permite testar o código.
+
+
+Para instalar esta gem localmente, execute:
+
+ bundle exec rake install
+
+
+Contribuições são bem-vindas! Relatórios de bugs e pull requests são bem-vindos no GitHub em https://github.com/RaquelFonsec/rails_s3_uploader.
+
+Licença
+Esta gem está disponível como código aberto sob os termos da licença MIT.
+
+
+
+
+
