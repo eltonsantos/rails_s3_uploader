@@ -1,72 +1,76 @@
-# RailsS3Uploader
+# Rails S3 Uploader
 
-
-**RailsS3Uploader** é uma gem em desenvolvimento para facilitar o upload de arquivos para o Amazon S3 usando Active Storage em aplicações Rails.
+Rails S3 Uploader is a gem in development to facilitate file uploads to Amazon S3 using Active Storage in Rails applications.
 
 ---
 
-## Instalação
+## Installation
 
-**Nota:** Esta gem está atualmente em desenvolvimento e ainda não foi lançada no RubyGems.org.
+**Note:** This gem is currently in development and your final version has not yet been released on RubyGems.org.
 
-Para usar a versão de desenvolvimento, adicione esta linha ao seu Gemfile:
+To use the development version, add this line to your Gemfile:
 
 ```ruby
-gem 'rails_s3_uploader', git: 'https://github.com/RaquelFonsec/rails_s3_uploader.git'
+gem 'rails_s3_uploader', git: 'https://github.com/eltonsantos/rails_s3_uploader.git'
 
+```
+And run: **bundle install**
 
-E execute: bundle install
+## Usage
 
+**Note:** Full usage documentation will be provided in future versions.
 
+## Initial Configuration
 
-Uso
-Nota: A documentação completa de uso será fornecida em futuras versões.
+#### Environment Variables
 
-Configuração Inicial
-Variáveis de Ambiente
+Create a **.env** file at the root of your Rails project and add your AWS credentials:
 
-Crie um arquivo .env na raiz do seu projeto Rails e adicione suas credenciais da AWS:
+```sh
+AWS_ACCESS_KEY_ID=your_access_key_id
+AWS_SECRET_ACCESS_KEY=your_secret_access_key
+AWS_REGION=your_region
+AWS_BUCKET=your_bucket
+```
 
-AWS_ACCESS_KEY_ID=seu_access_key_id
-AWS_SECRET_ACCESS_KEY=seu_secret_access_key
-AWS_REGION=sua_regiao
-AWS_BUCKET=nome_do_seu_bucket
+### Initializer
 
-Inicializador
+Create an initializer in *config/initializers/rails_s3_uploader.rb*:
 
-Crie um inicializador em config/initializers/rails_s3_uploader.rb
-
-
+```ruby
 RailsS3Uploader.configure do |config|
   config.access_key_id = ENV['AWS_ACCESS_KEY_ID']
   config.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   config.region = ENV['AWS_REGION']
   config.bucket = ENV['AWS_BUCKET']
 end
+```
 
+### Development
 
-Desenvolvimento
-Para configurar o ambiente de desenvolvimento, clone o repositório e instale as dependências:
+To set up the development environment, clone the repository and install the dependencies:
 
+```sh
+git clone https://github.com/eltonsantos/rails_s3_uploader.git
 
- git clone https://github.com/RaquelFonsec/rails_s3_uploader.git
+cd rails_s3_uploader
 
- cd rails_s3_uploader
+bin/setup
+```
 
- bin/setup
+You can use *bin/console* for an interactive prompt that allows you to test the code.
 
-Você pode usar bin/console para um prompt interativo que permite testar o código.
+To install this gem locally, run:
 
+```sh
+bundle exec rake install
+```
 
-Para instalar esta gem localmente, execute:
+Contributions are welcome! Bug reports and pull requests are welcome on GitHub at *https://github.com/eltonsantos/rails_s3_uploader*.
 
- bundle exec rake install
+## Licence
 
-
-Contribuições são bem-vindas! Relatórios de bugs e pull requests são bem-vindos no GitHub em https://github.com/RaquelFonsec/rails_s3_uploader.
-
-Licença
-Esta gem está disponível como código aberto sob os termos da licença MIT.
+This gem is available as open-source under the terms of the MIT license.
 
 
 
