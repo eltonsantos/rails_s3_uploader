@@ -1,4 +1,3 @@
-
 module RailsS3Uploader
     class Configuration
       attr_accessor :access_key_id, :secret_access_key, :region, :bucket

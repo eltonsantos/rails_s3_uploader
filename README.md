@@ -20,6 +20,18 @@ And run: **bundle install**
 
 **Note:** Full usage documentation will be provided in future versions.
 
+Rails S3 Uploader was developed to facilitate the file upload process to AWS S3 in Ruby on Rails projects. It can be especially useful in projects that need to store and manage files efficiently in the AWS cloud.
+
+### Recommended Project Types
+
+- **Web Applications:** Easily integrate image, document, and other file uploads in web applications built with Ruby on Rails.
+
+- **E-commerce Applications:** Manage product images, catalogs, and media files on e-commerce platforms.
+
+- **Content Management Systems (CMS):** Allow users to upload and manage multimedia content in Rails-based CMS systems.
+
+- **Collaboration Projects:** Facilitate document sharing among users on collaborative platforms.
+
 ## Initial Configuration
 
 #### Environment Variables
@@ -67,6 +79,14 @@ bundle exec rake install
 ```
 
 Contributions are welcome! Bug reports and pull requests are welcome on GitHub at *https://github.com/eltonsantos/rails_s3_uploader*.
+
+## Requirements
+
+- Ruby >= 2.6.0 (recommended 2.7+)
+  
+- Rails >= 6.0 (compatible up to Rails 7)
+  
+- AWS S3 Account: You need an S3 bucket and access credentials to use the rails_s3_uploader gem.
 
 ## Licence
 
